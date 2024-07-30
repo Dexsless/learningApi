@@ -106,7 +106,7 @@ class KategoriController extends Controller
                 'message' => 'Terjadi kesalahan',
                 'errors' => $e->getMessage()
             ];
-            return response()->json($res, 500);
+            return response()->json($res, 404);
         }
     }
     public function destroy($id)
@@ -126,7 +126,7 @@ class KategoriController extends Controller
                 'message' => 'Terjadi kesalahan',
                 'errors' => $e->getMessage()
             ];
-            return response()->json($res, 500);
+            return response()->json($res, 404);
         }
     }
 
