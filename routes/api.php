@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\TagController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:sanctum');
 
 // Route::get('kategori', [KategoriController::class, 'index']);
 // Route::post('kategori', [KategoriController::class, 'store']);
@@ -16,4 +17,5 @@ Route::get('/user', function (Request $request) {
 // Route::delete('kategori/{id}', [KategoriController::class, 'destroy']);
 Route::apiResource('kategori', KategoriController::class);
 Route::apiResource('tag', TagController::class);
+Route::apiResource('user', UserController::class);
 
