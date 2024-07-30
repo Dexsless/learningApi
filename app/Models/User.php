@@ -45,4 +45,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function berita()
+    {
+        return $this->hasMany(Berita::class, 'id_user');
+    }
 }

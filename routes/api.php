@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\UserController;
@@ -18,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('kategori', KategoriController::class);
 Route::apiResource('tag', TagController::class);
 Route::apiResource('user', UserController::class);
+Route::apiResource('berita', BeritaController::class);
 
