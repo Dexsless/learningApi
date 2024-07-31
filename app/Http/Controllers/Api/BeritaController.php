@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -47,7 +48,7 @@ class BeritaController extends Controller
             $berita->slug = Str::slug($request->judul);
             if ($request->hasFile('foto')) {
                 $image = $request->file('foto');
-                $filename = random_int(100000, 999999) . '.' . $image->getClientOriginalExtension();
+                $filename = Hash::make($image) . '.' . $image->getClientOriginalExtension();
                 $location = public_path('images/berita');
                 $image->move($location, $filename);
                 $berita->foto = $filename;
@@ -137,7 +138,7 @@ class BeritaController extends Controller
                 }
 
                 $image = $request->file('foto');
-                $filename = random_int(100000, 999999) . '.' . $image->getClientOriginalExtension();
+                $filename = Hash::make($image) . '.' . $image->getClientOriginalExtension();
                 $location = public_path('images/berita/');
                 $image->move($location, $filename);
                 $berita->foto = $filename;
