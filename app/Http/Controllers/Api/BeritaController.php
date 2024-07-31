@@ -204,6 +204,4 @@ class BeritaController extends Controller
             return response()->json($res, 500);
         }
     }
-
-
 }
