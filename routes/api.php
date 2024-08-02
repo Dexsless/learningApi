@@ -20,7 +20,7 @@ Route::get('/user/profile', function (Request $request) {
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::apiResource('kategori', KategoriController::class);
+    Route::apiResource('kategori', KategoriController::class);  
     Route::apiResource('tag', TagController::class);
     Route::apiResource('user', UserController::class);
     Route::apiResource('berita', BeritaController::class);
