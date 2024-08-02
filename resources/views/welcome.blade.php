@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    Selamat Datang, @guest
+                    Selamat Datang @guest
                     @else
                     {{(Auth::user()->user)}}
                     @endguest
